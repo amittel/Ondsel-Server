@@ -17,16 +17,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         <v-card-title>Download</v-card-title>
         <v-card-text>
           <v-card width="30em">
-            <v-card-title>Ondsel ES</v-card-title>
+            <v-card-title>FreeCAD</v-card-title>
             <v-card-subtitle>v {{ondselEsVersionTxt}}</v-card-subtitle>
             <v-card-text class="overflow-y-auto" >
               <v-container class="d-flex flex-row justify-start">
                 <v-avatar width="7em" rounded="0" class="mr-2">
-                  <v-img
-                    width="6em"
-                    alt="Linux"
-                    src="https://ondsel.com/img/os_linux.svg"
-                  />
+                  <v-icon size="2.5em" color="black" icon="mdi-penguin"></v-icon>
                 </v-avatar>
                 <v-container style="border-left: 4px solid black;">
                   <download-published-link
@@ -55,11 +51,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
               <p/>
               <v-container class="d-flex flex-row justify-start">
                 <v-avatar width="7em" rounded="0" class="mr-2">
-                  <v-img
-                    width="6em"
-                    alt="Mac"
-                    src="https://ondsel.com/img/os_mac.svg"
-                  />
+                  <v-icon size="2.5em" color="black" icon="mdi-apple"></v-icon>
                 </v-avatar>
                 <v-container style="border-left: 4px solid black;">
                   <download-published-link
@@ -87,11 +79,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
               </v-container>
               <v-container class="d-flex flex-row mt-4 justify-start">
                 <v-avatar width="7em" rounded="0" class="mr-2">
-                  <v-img
-                    width="6em"
-                    alt="Windows"
-                    src="https://ondsel.com/img/os_windows.svg"
-                  />
+                  <v-icon size="2.5em" color="black" icon="mdi-microsoft-windows"></v-icon>
                 </v-avatar>
                 <v-container style="border-left: 4px solid black;">
                   <download-published-link
@@ -112,17 +100,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
           <v-card class="mt-4" width="30em">
             <v-card-title>Pre-Releases</v-card-title>
             <v-card-text class="overflow-y-auto" >
-              <b>The latest pre-release version of Ondsel ES was built on {{weeklyBuildDate}}</b>
+              <!-- <b>The latest pre-release version of Ondsel ES was built on {{weeklyBuildDate}}</b> -->
               <p>
                 ⚠️ These are intended for testing purposes only. Please don't use them for regular work. ⚠️
               </p>
               <v-container class="d-flex flex-row justify-start">
                 <v-avatar width="7em" rounded="0" class="mr-2">
-                  <v-img
-                    width="6em"
-                    alt="Linux"
-                    src="https://ondsel.com/img/os_linux.svg"
-                  />
+                   <v-icon size="2.5em" color="black" icon="mdi-penguin"></v-icon>
                 </v-avatar>
                 <v-container style="border-left: 4px solid black;">
                   <v-expansion-panels>
@@ -147,11 +131,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
               <p/>
               <v-container class="d-flex flex-row justify-start">
                 <v-avatar width="7em" rounded="0" class="mr-2">
-                  <v-img
-                    width="6em"
-                    alt="Mac"
-                    src="https://ondsel.com/img/os_mac.svg"
-                  />
+                  <v-icon size="2.5em" color="black" icon="mdi-apple"></v-icon>
                 </v-avatar>
                 <v-container style="border-left: 4px solid black;">
                   <v-expansion-panels>
@@ -175,11 +155,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
               </v-container>
               <v-container class="d-flex flex-row justify-start mt-4">
                 <v-avatar width="7em" rounded="0" class="mr-2">
-                  <v-img
-                    width="6em"
-                    alt="Windows"
-                    src="https://ondsel.com/img/os_windows.svg"
-                  />
+                  <v-icon size="2.5em" color="black" icon="mdi-microsoft-windows"></v-icon>
                 </v-avatar>
                 <v-container style="border-left: 4px solid black;">
                   <v-expansion-panels>
