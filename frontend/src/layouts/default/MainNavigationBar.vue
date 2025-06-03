@@ -15,7 +15,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     >
       <template v-slot:prepend>
         <v-img
-          src="https://ondsel.com/img/Icon_Orange.svg"
+          src="@/assets/logo.svg"
           width="24"
           height="24"
           class="mr-8"
