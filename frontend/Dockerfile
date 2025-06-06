@@ -20,7 +20,7 @@ WORKDIR /app
 RUN npm ci && npm run build
 
 # FROM nginx
-FROM openresty/openresty
+FROM openresty/openresty:alpine
 RUN mkdir /app
 COPY --from=0 /app/dist /app
 COPY ./nginx_binaries/http.lua /usr/local/openresty/lualib/resty/http.lua
