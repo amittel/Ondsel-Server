@@ -15,20 +15,23 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     >
       <template v-slot:prepend>
         <v-img
-          src="https://ondsel.com/img/Icon_Orange.svg"
+          src="@/assets/logo.svg"
           width="24"
           height="24"
           class="mr-8"
         ></v-img>
       </template>
     </v-list-item>
+
+    <v-divider />
+    
+    <!-- Organization -->
     <v-list-item
-      :title = "currentOrganization?.name || 'public'"
+      v-if="loggedInUser"
       id="navbar-org-action-activator"
     >
       <template v-slot:prepend>
         <v-sheet
-          v-if="loggedInUser"
           class="d-flex flex-column justify-center align-center text-uppercase mr-8"
           width="24"
           height="24"
@@ -37,23 +40,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         >
           {{ getInitials(currentOrganization?.name || '?') }}
         </v-sheet>
-        <v-sheet
-          v-else
-          class="d-flex flex-column justify-center align-center text-uppercase mr-8"
-          width="24"
-          height="24"
-          rounded="circle"
-          color="grey-darken-2"
-        >
-          -
-        </v-sheet>
       </template>
+      <template #title>
+          <v-sheet
+            class="d-flex flex-row justify-space-between"
+          >
+            <v-sheet>{{ currentOrganization?.name }}</v-sheet>
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-sheet>
+        </template>
     </v-list-item>
-    <v-list-item
-      :prepend-icon="railIcon"
-      title = " "
-      @click="rail = !rail"
-    ></v-list-item>
+
+    <!-- Search -->
     <v-list-item
       prepend-icon="mdi-magnify"
     >
@@ -68,6 +66,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         @keyup.enter="doSearch"
       ></v-text-field>
     </v-list-item>
+
+    <!-- Main items: Workspaces, Models, ... -->
     <v-list-item
       v-for="item in mainItems"
       :key="item.icon"
@@ -76,6 +76,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
       :title="item.title"
       link
     ></v-list-item>
+    <!-- Secondary items: Notifications, Shared with me, ... -->
     <template #append>
       <v-list-item
         v-for="item in secondaryItems"
@@ -155,7 +156,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </v-navigation-drawer>
 
 
-
+  <!-- Organization menu -->
   <v-menu
     activator="#navbar-org-action-activator"
     v-if="loggedInUser"
@@ -191,6 +192,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
       </v-card-text>
     </v-card>
   </v-menu>
+
+  <!-- Account menu -->
   <v-menu
     v-if="loggedInUser"
     activator="#navbar-user-action-activator"
